@@ -12,7 +12,7 @@
     <section>
         <div>
             <h2>Сотрудничай со мной!</h2>
-            <p>Оставляй свой email и я свяжусь с тобой!</p>
+            <p>Заполни нужные поля и я свяжусь с тобой!</p>
         </div>
         <div>
             <!-- добавить какую-то ссылку в action!!!! -->
@@ -32,6 +32,7 @@
                     <div>
                         <label for="phone">Телефон</label>
                         <input type="tel" id="phone" name="phone"
+                            pattern="[\+]\d{1}\s?[\(]\d{3}[\)]\s?\d{3}[\-]\d{2}[\-]\d{2}"
                             placeholder="+7(999)999-99-99">
                     </div>
                 </fieldset>
@@ -46,7 +47,7 @@
                     <label for="checkboxx">Согласие на обработку перс. данных</label>
                 </div>
                 <div>
-                    <input type="submit" placeholder="add">
+                    <input type="submit" value="add">
                 </div>
             </form>
         </div>
