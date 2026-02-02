@@ -1,0 +1,9 @@
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.router-outlet-wrapper {
+  flex-grow: 1;
+}
