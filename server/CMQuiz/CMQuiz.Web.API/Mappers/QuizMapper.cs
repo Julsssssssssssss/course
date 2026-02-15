@@ -89,20 +89,26 @@ public static class QuizMapper
             {
                 Id = item.Id,
                 QuizId = quizId,
-                Options = select.Options.ToList().AsReadOnly()
+                Options = select.Options.ToList().AsReadOnly(),
+                Title = select.Title,
+                Description = select.Description,
             },
             QuizItemText text => new QuizItemTextModel
             {
                 Id = item.Id,
                 QuizId = quizId,
-                Placeholder = text.Placeholder
+                Placeholder = text.Placeholder,
+                Title = text.Title,
+                Description = text.Description,
             },
             QuizItemRange range => new QuizItemRangeModel
             {
                 Id = item.Id,
                 QuizId = quizId,
                 Min = range.Min,
-                Max = range.Max
+                Max = range.Max,
+                Title = range.Title, 
+                Description = range.Description
             },
             _ => throw new ArgumentException("Unknown quiz item type")
         };

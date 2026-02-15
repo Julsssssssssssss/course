@@ -28,4 +28,8 @@ public abstract record QuizItemModel
     /// The unique identifier of the parent quiz that this item belongs to.
     /// </summary>
     public required int QuizId { get; init; }
+    
+    public required string Title { get; init; }
+    
+    public required string Description { get; init; }
 }
