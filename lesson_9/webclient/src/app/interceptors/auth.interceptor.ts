@@ -15,7 +15,7 @@ export const handleAuth: HttpInterceptorFn = (req, next) => {
     catchError((x: HttpErrorResponse) => {
       if (x.status === 401) {
         authState.loggedIn.set(false);
-        router.navigate(['auth']);
+        router.navigate(['auth/login']);
       }
 
       return throwError(() => x);

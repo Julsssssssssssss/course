@@ -3,6 +3,7 @@ import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {ApiAuthService} from '../../../services/auth/api-auth.service';
 import {firstValueFrom} from 'rxjs';
 import {AuthState} from '../../../states/auth.state';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,7 @@ import {AuthState} from '../../../states/auth.state';
   `
 })
 export class LoginComponent {
+  private readonly router = inject(Router);
   private readonly authService = inject(ApiAuthService);
   private readonly authState = inject(AuthState);
 
@@ -27,5 +29,6 @@ export class LoginComponent {
   protected async submit() {
     await firstValueFrom(this.authService.login(this.form.getRawValue()));
     this.authState.loggedIn.set(true);
+    await this.router.navigate(['/main/discover']);
   }
 }
